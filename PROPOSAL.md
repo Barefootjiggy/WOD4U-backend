@@ -20,6 +20,14 @@ https://imgur.com/DGG4vAU
 
 ![log-in, comments](image-1.png)
 
+Mobile View 1 https://imgur.com/hnAxaut
+
+![WOD Mobile](image-2.png)
+
+Mobile View 2 https://imgur.com/IpHfMk9
+
+![Mobile log-in, comments](image-3.png)
+
 User Stories
 
 MVP Goals
@@ -42,33 +50,47 @@ Timeline - Daily Accountability
 Monday		
 
 - Create Proposal
-- Find suitable Third-party API or create own
+- Find suitable Third-party API or create own data
+- Have the bones of routes, controllers and models
+- MongoDB connecting with data I am going to use
+- Server running
 
 Tuesday
 
-- Have server up and running and connected
-- Have the ability to CRUD
+- Authentication/Authorization
+- Implement backend registration logic, including password hashing
+- Set up login verification backend logic with token management
+- Design database schema for all entity's
+- Implement API endpoint for creating
+- Set up database query for fetching
 
 Wednesday
 
-- Have the ability of a log-in unique to user avaialble
-- MVP Goals completed
+- Implement API endpoint for updating
+- Add delete option to UI for each workout
+- Set up backend logic for deleting workout
+- Deployment
 
 Thursday 
 
-- Have the ability to hit complete on a workout
-- Have option for a profile pciture
-- Have option to like a workout
+- Frontend to display workouts
+- Create UI for editing workout
+- Login form UI
+- Develop user registration form
+- Create a random workout feature that selects a workout at random for the user
+- Finalize MVP
 
 Friday 
 
-- Have option to comment under workout
-- Have option to track which workout I did on what day
+- Add a like feature for workouts
+- UI component and backend to manage likes
 
 Saturday
 
-- Work on front-end 
-- Color options
+- Enable users to comment on workouts
+- Providers users with ability to log workouts they've completed
+- Feature to mark a workout as done and track activities over time
+- Neccessary backend logic to bring it together
 
 Sunday
 
