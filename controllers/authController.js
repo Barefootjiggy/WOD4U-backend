@@ -61,15 +61,15 @@ export const signup = async (req, res) => {
         userData.password = await bcrypt.hash(userData.password, 8);
         const user = await User.create(userData);
 
-        // Generate a token for the new user
-        // const token = jwt.sign(
-          //  { userId: user._id }, // Payload typically includes user identification
-          //  process.env.SECRET_KEY, // Secret key for signing the token
-          //  { expiresIn: '24h' } // Optional token expiration
-      //  );
+         // Generate a token for the new user
+         const token = jwt.sign(
+            { userId: user._id }, // Payload typically includes user identification
+            process.env.SECRET_KEY, // Secret key for signing the token
+            { expiresIn: '24h' } // Optional token expiration
+        );
         res.json({
             successMessage: `The user ${user.username} has been created successfully`,
-           // token: token
+            token: token
 
         });
 
@@ -81,34 +81,28 @@ export const signup = async (req, res) => {
 
 
 export const login = async (req, res) => {
+    console.log(req.body)
     try {
         const user = await User.findOne({ username: req.body.username });
         if (user) {
             const result = await bcrypt.compare(req.body.password, user.password);
+            console.log(result)
             if (result) {
                 const payload = { username: user.username };
-                const token = jwt.sign(payload, jwtSecret, { expiresIn: '1d' }); // Example: Expiring in 1 day
-                console.log(token, payload); // Correct placement of console.log
-
-                // Choose either to send a cookie or a JSON response with the token, not both.
-                // For sending a token in a cookie:
+                console.log(payload)
+                const token = jwt.sign(payload,jwtSecret, { expiresIn: '1d' }); // Example: Expiring in 1 day
+                console.log(token, payload)
                 res.cookie('token', token, { httpOnly: true }).json({ message: 'Login successful' });
                 
-                // If you want to send the token in the JSON body instead of a cookie, comment out the above line and use:
-                // res.json({
-                //     message: 'Login successful',
-                //     token: token,
-                // });
-                
-            } else {
+             } else {
                 res.status(400).json({ error: 'Password does not match' });
-            }
-        } else {
+             }
+         } else {
             res.status(400).json({ error: 'User not found' });
         }
     } catch (error) {
         res.status(500).json({ error: 'Error logging in' });
-    }
+     }
 };
 
 export const logout = async (req, res) => { 

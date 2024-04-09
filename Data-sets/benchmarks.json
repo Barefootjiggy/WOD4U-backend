@@ -1,0 +1,127 @@
+[
+    {
+      "title": "Fran",
+      "description": "Thrusters and Pull-Ups. Do three rounds of 21-15-9 reps as fast as possible."
+    },
+    {
+      "title": "The Longest Mile",
+      "description": "10 Burpees, 100 meter Run, 10 Air Squats, 100 meter Run, 10 Push-Ups, 100 meter Run, 10 Sit-Ups, 100 meter Run. Repeat all for four rounds."
+    },
+    {
+      "title": "Fat Amy",
+      "description": "50 Air Squats, 10 Burpees, 40 Sit-Ups, 10 Burpees, 30 Lunges, 10 Burpees, 20 Kettlebell Swings, 10 Burpees, 10 meters Bear Crawl, 10 Burpees, 20 Kettlebell Swings, 10 Burpees, 30 Lunges, 10 Burpees, 40 Sit-Ups, 10 Burpees, 50 Air Squats. Do each exercise as fast as possible."
+    },
+    {
+      "title": "Chelsea",
+      "description": "EMOM for 30 minutes: 5 Pull-Ups, 10 Push-Ups, 15 Air Squats."
+    },
+    {
+      "title": "Annie",
+      "description": "Perform double unders and sit-ups. 50 – 40 – 30 – 20 – 10 reps (in a descending ladder)."
+    },
+    {
+      "title": "Eva",
+      "description": "800 meters Run, 30 KB swings (2/1.5 pood), 30 Pullups. Repeat for 5 rounds."
+    },
+    {
+      "title": "Nancy",
+      "description": "400 meters Run, 15 Overhead Squats with 95/65 pounds. Repeat for 5 rounds."
+    },
+    {
+      "title": "Kelly",
+      "description": "Run 400m, 30 Box Jumps 20/24 in, 30 Wall Balls 20/14 lbs. Do 5 rounds with 3 minutes rest between them."
+    },
+    {
+      "title": "Barbara",
+      "description": "5 Rounds for time: 20 Pull-ups, 30 Push-ups, 40 Sit-ups, 50 Squats."
+    },
+    {
+      "title": "Diane",
+      "description": "Perform Deadlift with 225lbs and Handstand Push-ups. 50 – 40 – 30 – 20 – 10 reps (in a descending ladder)."
+    },
+    {
+      "title": "Jackie",
+      "description": "1000 meters Rowing, 50 Thruster with 45/35 lbs., 30 Pull Ups."
+    },
+    {
+      "title": "Elizabeth",
+      "description": "Perform Clean with 225lbs and Ring Dips. 50 – 40 – 30 – 20 – 10 reps (in a descending ladder)."
+    },
+    {
+      "title": "Marguerita",
+      "description": "1 Burpee, 1 Push-Up, 1 Jumping-Jack, 1 Sit-Up, 1 Handstand. Complete 50 rounds for time."
+    },
+    {
+      "title": "Karen",
+      "description": "150 Wall Balls 20/14 lbs, 9-10 ft."
+    },
+    {
+      "title": "Bear Complex",
+      "description": "Perform one rep of the exercises below seven times without dropping or leaving the bar on the ground to complete one complex. And do a total of five complexes. Power clean, Front Squat, Push Press, Back Squat, Push Press."
+    },
+    {
+      "title": "Helen",
+      "description": "Run 400 meters, 21 Kettle Bell Swings with 1.5/1 pood, 12 Pull-ups. Repeat for three rounds."
+    },
+    {
+      "title": "Grace",
+      "description": "30 Clean and Jerk with 135/95 lbs."
+    },
+    {
+      "title": "Filthy Fifty",
+      "description": "50 Box Jumps (24/20 in), 50 Jumping Pull-Ups, 50 Kettlebell Swings (.75/1 pood), 50 Walking Lunges, 50 Knees-to-Elbows, 50 Push Presses with 45/35 lbs., 50 Back Extensions, 50 Wall Ball Shots with 20/14 lbs., 50 Burpees, 50 Double-Unders."
+    },
+    {
+      "title": "Angie",
+      "description": "For time: 100 Pull-Ups, 100 Push-Ups, 100 Sit-Ups, 100 Air Squats."
+    },
+    {
+      "title": "Grettel",
+      "description": "3 Clean-and-Jerks with 135/95 lbs., 3 Bar Over Burpees. Repeat 10 times."
+    },
+    {
+      "title": "Isabel",
+      "description": "Do 30 Snatches with 135/95 lbs. as fast as you can."
+    },
+    {
+      "title": "Cooper",
+      "description": "10 Burpees, 10 Air Squats, 10 Push-Ups, 10 Sit-Ups. Complete 10 rounds with as little rest as possible between sets."
+    },
+    {
+      "title": "Dirty Thirty",
+      "description": "30 Box Jumps (24/20 in), 30 Jumping Pull-Ups, 30 Kettlebell Swings with 35 lbs., 30 Lunges, 30 Knees-to-Elbows, 30 Push Presses 45/35 lbs., 30 Back Extensions, 30 Wall Ball Shots 20/14 lbs., 30 Burpees, 30 Double-Unders. Do the exercises as fast as possible."
+    },
+    {
+      "title": "Baseline",
+      "description": "500 meter Row, 40 Air Squats, 30 Sit-Ups, 20 Push-Ups, 10 Pull-Ups. Do the exercises as fast as possible."
+    },
+    {
+      "title": "Ellen",
+      "description": "20 Burpees, 21 Alternating Dumbbell Snatches with 50 lbs., 12 Dumbbell Thrusters 35 lbs. Complete three rounds."
+    },
+    {
+      "title": "Amanda",
+      "description": "9 – 7– 5 reps muscle-ups and squat Snatches (in a descending ladder)."
+    },
+    {
+      "title": "Nasty Girls",
+      "description": "50 Air Squats, 7 Muscle-Ups, 10 Hang Power Cleans with 95-135 lbs. Complete three rounds."
+    },
+    {
+      "title": "Christine",
+      "description": "500 meter Row, 12 Deadlifts, 21 Box Jumps. Repeat three times."
+    },
+    {
+      "title": "King Kong",
+      "description": "1 Deadlift with 320-455 lbs., 2 Muscle-Ups, 3 Squat Cleans with 175-250 lbs., 4 Handstand Push Ups. Repeat three times."
+    },
+    {
+      "title": "Betty",
+      "description": "12 Push Presses with 95-135 lbs, 20 Box Jumps (24/20 in). Complete five rounds."
+    },
+    {
+      "title": "Nicole",
+      "description": "400 meter Run, Pull-Ups till Failure. Perform as many rounds as possible in twenty minutes."
+    }
+  ]
+  

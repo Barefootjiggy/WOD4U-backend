@@ -6,7 +6,7 @@ const verifyAuth = (req, res, next) => {
   const tokenHeader = req.headers.authorization;
   
   // Check if the authorization header exists
-  if (!tokenHeader) {
+   if (!tokenHeader) {
     return res.status(401).json({
       tokenError: "No token provided, please log in."
     });
