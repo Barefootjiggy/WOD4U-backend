@@ -56,7 +56,7 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
   app.use('/api/users', verifyAuth, userRouter);
   app.use('/api/auth', authRouter);
-  app.use('/api/workout', workoutRouter);
+  app.use('/', workoutRouter);
 
   app.post('/login', (req, res) => {
     const { username, password } = req.body;
