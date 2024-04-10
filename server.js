@@ -49,6 +49,7 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   
 
   app.use(express.json());
+  app.use(express.static('public'));
   app.use((req, res, next) => {
     console.log(`Incoming request: ${req.method} ${req.path}`, req.body);
     next();
