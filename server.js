@@ -1,5 +1,6 @@
 import 'dotenv/config'
 import mongoose from 'mongoose'
+import cors from 'cors'
 import express from 'express'
 import authRouter from './routes/authRouter.js';
 import userRouter from './routes/userRouter.js';
@@ -12,6 +13,7 @@ import workoutRouter from './routes/workoutRouter.js';
 
 
 const app = express();
+app.use(cors())
 
 const PORT = process.env.PORT || 3000
 const mongoURI = process.env.mongoURI
@@ -59,16 +61,16 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   app.use('/api/auth', authRouter);
   app.use('/', workoutRouter);
 
-  app.post('/login', (req, res) => {
-    const { username, password } = req.body;
-    // Here, you would typically check the credentials against your user database
-    // This is a simplified example
-    if(username === 'user' && password === 'pass') {
-        res.send('Login successful');
-    } else {
-        res.status(401).send('Login failed');
-    }
-});
+//   app.post('/login', (req, res) => {
+//     const { username, password } = req.body;
+//     // Here, you would typically check the credentials against your user database
+//     // This is a simplified example
+//     if(username === 'user' && password === 'pass') {
+//         res.send('Login successful');
+//     } else {
+//         res.status(401).send('Login failed');
+//     }
+// });
 
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
