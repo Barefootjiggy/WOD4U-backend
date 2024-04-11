@@ -14,6 +14,13 @@ import workoutRouter from './routes/workoutRouter.js';
 
 const app = express();
 app.use(cors())
+const corsOptions = {
+  origin: 'http://127.0.0.1:5500', // Specify allowed origin(s) here
+  credentials: true, // Allow credentials
+};
+
+app.use(cors(corsOptions));
+
 
 const PORT = process.env.PORT || 3000
 const mongoURI = process.env.mongoURI
@@ -59,7 +66,9 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
   app.use('/api/users', verifyAuth, userRouter);
   app.use('/api/auth', authRouter);
-  app.use('/', workoutRouter);
+  app.use('/api/workouts', workoutRouter);
+  
+
 
 //   app.post('/login', (req, res) => {
 //     const { username, password } = req.body;
