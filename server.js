@@ -13,7 +13,6 @@ import workoutRouter from './routes/workoutRouter.js';
 
 
 const app = express();
-app.use(cors())
 const corsOptions = {
   origin: 'http://127.0.0.1:5500', // Specify allowed origin(s) here
   credentials: true, // Allow credentials
