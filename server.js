@@ -36,6 +36,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get('/', (req, res) => {
+  res.redirect('/api/workouts');
+});
+
 app.get('/api/workouts', (req, res) => {
   fs.readFile(path.join(__dirname, 'benchmarks.json'), 'utf-8', (err, data) => {
     if (err) {
