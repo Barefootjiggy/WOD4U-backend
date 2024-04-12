@@ -7,8 +7,8 @@ router.get('/', getWorkout);
 
 router.post('/', createWorkout);
 
-router.put('/:id', updateWorkout);
+router.put('/:title', updateWorkout);
 
-router.delete('/:id', deleteWorkout);
+router.delete('/:title', deleteWorkout);
 
 export default router;
