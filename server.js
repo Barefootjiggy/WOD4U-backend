@@ -63,6 +63,11 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     next();
 });
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the homepage!');
+});
+
+
   app.use('/api/users', verifyAuth, userRouter);
   app.use('/api/auth', authRouter);
   app.use('/api/workouts', workoutRouter);
