@@ -14,7 +14,7 @@ import workoutRouter from './routes/workoutRouter.js';
 
 const app = express();
 const corsOptions = {
-  origin: 'http://127.0.0.1:5500', // Specify allowed origin(s) here
+  origin: ['http://127.0.0.1:5500', 'https://wod4u-cfaebfd65d57.herokuapp.com'], 
   credentials: true, // Allow credentials
 };
 
