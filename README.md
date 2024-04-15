@@ -18,6 +18,9 @@ https://imgur.com/F8YKhiM
 
 ![homepage](image-5.png)
 
+ERD
+![ERD](<Screenshot 2024-04-15 at 11.45.23 AM.png>)
+
 User Stories
 
 MVP Goals
