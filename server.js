@@ -20,16 +20,6 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.use((req, res, next) => {
-  // Allow requests from all origins
-  res.header('Access-Control-Allow-Origin', '*');
-  // Allow certain headers
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-  // Allow certain methods
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  next();
-});
-
 const PORT = process.env.PORT || 3000
 const mongoURI = process.env.mongoURI
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
