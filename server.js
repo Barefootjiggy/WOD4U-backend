@@ -5,7 +5,7 @@ import express from 'express'
 import authRouter from './routes/authRouter.js';
 import userRouter from './routes/userRouter.js';
 import verifyAuth from './middleware/verifyAuth.js';
-// import Workout from './models/workoutModel.js';
+import Workout from './models/workoutModel.js';
 import workoutRouter from './routes/workoutRouter.js';
 
 // MODELS
@@ -14,7 +14,7 @@ import workoutRouter from './routes/workoutRouter.js';
 
 const app = express();
 const corsOptions = {
-  origin: ['http://127.0.0.1:5500', 'https://wod4u-cfaebfd65d57.herokuapp.com'], 
+  origin: ['http://127.0.0.1:5501', 'https://wod4u-cfaebfd65d57.herokuapp.com'], 
   credentials: true, // Allow credentials
 };
 
@@ -63,9 +63,20 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     next();
 });
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+app.get('/api/workouts', async (req, res) => {
+  try {
+      // Fetch workouts from your database
+      const workouts = await Workout.find(); // Assuming Workout is your Mongoose model
+
+      // Send the workouts as a response
+      res.status(200).json(workouts);
+  } catch (error) {
+      // Handle any errors that occur during the process
+      console.error('Error fetching workouts:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
 });
+
 
 
   app.use('/api/users', verifyAuth, userRouter);
