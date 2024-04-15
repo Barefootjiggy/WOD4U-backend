@@ -8,23 +8,15 @@ WOD4U is an app where users can get workouts of the day given to them as we all 
 
 Wire Frames
 
-View 1 https://imgur.com/qoFUGMH
+View 1 https://imgur.com/9fCW0Rh
 
-![WOD](image.png)
+![login](image-4.png)
 
 View 2
 
-https://imgur.com/DGG4vAU
+https://imgur.com/F8YKhiM
 
-![log-in, comments](image-1.png)
-
-Mobile View 1 https://imgur.com/hnAxaut
-
-![WOD Mobile](image-2.png)
-
-Mobile View 2 https://imgur.com/IpHfMk9
-
-![Mobile log-in, comments](image-3.png)
+![homepage](image-5.png)
 
 User Stories
 
@@ -33,7 +25,6 @@ MVP Goals
 As a user I want to CRUD
 As a user I want to favorite
 As a user I want to see all workouts available
-As a user I want to have the option to see a random workout
 As a user I want a log-in unique to me
 
 Stretch Goals
@@ -45,40 +36,57 @@ As a user I want to be able to track which workout I did on what day
 
 Timeline - Daily Accountability
 
-Monday		
+# Monday
 
-- Create Proposal
-- Find suitable Third-party API or create own
+- [x]  Create Proposal
+- [x]  Find suitable third-party api or create own data
+- [x]  Have the bones of routes, controllers and models
 
-Tuesday
+- [x]  Authentication/Authorization
 
-- Have server up and running and connected
-- Have the ability to CRUD
+- [x]  MongoDB connecting with data I am going to use
+- [x]  Server running
 
-Wednesday
+# Tuesday
 
-- Have the ability of a log-in unique to user avaialble
-- MVP Goals completed
+- [x]  Implement backend registration logic, including password hashing
+- [x]  Login form UI
+- [x]  Set up login verification backend logic with token management
+- [x]  Design database schema for all entity's
+- [x]  Implement API endpoint for creating
+- [x]  Set up database query for fetching
 
-Thursday 
+# Wednesday
 
-- Have the ability to hit complete on a workout
-- Have option for a profile pciture
-- Have option to like a workout
+- [x]  Frontend to display workouts
+- [x]  Create UI for editing workout
+- [x]  Implement API endpoint for updating
+- [x]  Add delete option to UI for each workout
+- [x]  Set up backend logic for deleting workout
 
-Friday 
+# Thursday
 
-- Have option to comment under workout
-- Have option to track which workout I did on what day
+- [x]  Develop user registration form
+- [ ]  Create a random workout feature that selects a workout at random for the user
+- [x]  Finalize MVP
 
-Saturday
+# Friday
 
-- Work on front-end 
-- Color options
+- [ ]  Implement Profile Customization
+- [ ]  Capability for users to upload and display a profile picture
+- [ ]  Add a like feature for workouts
+- [ ]  UI component and backend to manage likes
 
-Sunday
+# Saturday
 
-- Animations for liking a workout and completeing a workout
+- [ ]  Enable users to comment on workouts
+- [ ]  Providers users with ability to log workouts they've completed
+- [ ]  Feature to mark a workout as done and track activities over time
+- [ ]  Necessary backend logic to bring it together
+
+# Sunday
+
+- [ ]  Animations for liking a workout and completing a workout
 
 
 

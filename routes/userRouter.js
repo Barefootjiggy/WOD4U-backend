@@ -6,7 +6,7 @@ import verifyAuth from '../middleware/verifyAuth.js';
 const router = express.Router();
 
 // Inside userRouter.js
-router.get('/profile', verifyAuth, (req, res) => {
+router.get('/profile', verifyAuth, isUserLoggedIn, (req, res) => {
     // Your logic to return the user profile
     res.json({ message: "User profile data" });
 });
