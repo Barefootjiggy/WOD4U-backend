@@ -14,7 +14,7 @@ import workoutRouter from './routes/workoutRouter.js';
 
 const app = express();
 const corsOptions = {
-  origin: ['http://127.0.0.1:5501', 'https://wod4u-cfaebfd65d57.herokuapp.com'], 
+  origin: ['http://127.0.0.1:5500', 'http://localhost:3000', 'https://wod4u-cfaebfd65d57.herokuapp.com'], 
   credentials: true, // Allow credentials
 };
 
@@ -61,6 +61,11 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   app.use((req, res, next) => {
     console.log(`Incoming request: ${req.method} ${req.path}`, req.body);
     next();
+});
+
+// Define a route handler for the root URL ("/")
+app.get('/', (req, res) => {
+  res.redirect('/api/workouts'); // Redirect to the /api/workouts endpoint
 });
 
 app.get('/api/workouts', async (req, res) => {
