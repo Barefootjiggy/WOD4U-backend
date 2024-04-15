@@ -14,7 +14,7 @@ import workoutRouter from './routes/workoutRouter.js';
 
 const app = express();
 const corsOptions = {
-  origin: ['http://127.0.0.1:5500', 'http://localhost:3000', 'https://wod4u-cfaebfd65d57.herokuapp.com', 'https://wod4u.netlify.app/', 'http://127.0.0.1:5501'], 
+  origin: ['http://127.0.0.1:5500', 'http://localhost:3000', 'https://wod4u-cfaebfd65d57.herokuapp.com', 'https://wod4u.netlify.app'], 
   credentials: true, // Allow credentials
 };
 
