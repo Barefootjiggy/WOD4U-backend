@@ -14,12 +14,21 @@ import workoutRouter from './routes/workoutRouter.js';
 
 const app = express();
 const corsOptions = {
-  origin: ['http://127.0.0.1:5500', 'http://localhost:3000', 'https://wod4u-cfaebfd65d57.herokuapp.com'], 
+  origin: ['http://127.0.0.1:5500', 'http://localhost:3000', 'https://wod4u-cfaebfd65d57.herokuapp.com', 'https://wod4u.netlify.app/', 'http://127.0.0.1:5501'], 
   credentials: true, // Allow credentials
 };
 
 app.use(cors(corsOptions));
 
+app.use((req, res, next) => {
+  // Allow requests from all origins
+  res.header('Access-Control-Allow-Origin', '*');
+  // Allow certain headers
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  // Allow certain methods
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  next();
+});
 
 const PORT = process.env.PORT || 3000
 const mongoURI = process.env.mongoURI
