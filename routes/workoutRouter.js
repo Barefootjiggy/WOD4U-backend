@@ -3,8 +3,6 @@ const router = express.Router();
 
 import { getWorkout, createWorkout, updateWorkout, deleteWorkout } from '../controllers/workoutController.js';
 
-// import verifyAuth from '../middleware/verifyAuth.js';
-
 router.get('/', getWorkout); 
 
 router.post('/', createWorkout);
