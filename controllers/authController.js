@@ -80,29 +80,54 @@ export const signup = async (req, res) => {
 };
 
 
+// export const login = async (req, res) => {
+//     console.log(req.body)
+//     try {
+//         const user = await User.findOne({ username: req.body.username });
+//         if (user) {
+//             const result = await bcrypt.compare(req.body.password, user.password);
+//             console.log(result)
+//             if (result) {
+//                 const payload = { username: user.username };
+//                 console.log(payload)
+//                 const token = jwt.sign(payload,jwtSecret, { expiresIn: '1d' }); // Example: Expiring in 1 day
+//                 console.log(token, payload)
+//                 res.cookie('token', token, { httpOnly: true }).json({ message: 'Login successful' });
+                
+//              } else {
+//                 res.status(400).json({ error: 'Password does not match' });
+//              }
+//          } else {
+//             res.status(400).json({ error: 'User not found' });
+//         }
+//     } catch (error) {
+//         res.status(500).json({ error: 'Error logging in' });
+//      }
+// };
+
 export const login = async (req, res) => {
-    console.log(req.body)
     try {
         const user = await User.findOne({ username: req.body.username });
-        if (user) {
-            const result = await bcrypt.compare(req.body.password, user.password);
-            console.log(result)
-            if (result) {
-                const payload = { username: user.username };
-                console.log(payload)
-                const token = jwt.sign(payload,jwtSecret, { expiresIn: '1d' }); // Example: Expiring in 1 day
-                console.log(token, payload)
-                res.cookie('token', token, { httpOnly: true }).json({ message: 'Login successful' });
-                
-             } else {
-                res.status(400).json({ error: 'Password does not match' });
-             }
-         } else {
-            res.status(400).json({ error: 'User not found' });
+        if (!user) {
+            return res.status(401).json({ error: 'Invalid username or password' });
+        }
+
+        const isPasswordValid = await bcrypt.compare(req.body.password, user.password);
+        if (isPasswordValid) {
+            const payload = { userId: user._id, username: user.username };
+            const token = jwt.sign(payload, jwtSecret, { expiresIn: '1d' });
+            console.log('Generated token:', token); // Debugging log for the generated token
+            return res.json({
+                message: 'Login successful',
+                token: token // Ensure token is included in the response
+            });
+        } else {
+            return res.status(401).json({ error: 'Invalid username or password' });
         }
     } catch (error) {
-        res.status(500).json({ error: 'Error logging in' });
-     }
+        console.error('Error logging in', error); // General error logging
+        return res.status(500).json({ error: 'Error logging in' });
+    }
 };
 
 export const logout = async (req, res) => { 
