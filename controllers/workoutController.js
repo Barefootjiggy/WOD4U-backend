@@ -21,33 +21,27 @@ const createWorkout = async (req, res) => {
 };
 
 const updateWorkout = async (req, res) => {
-    // Decode URI component and trim whitespace
     const title = decodeURIComponent(req.params.title.trim());
     try {
-        // Use a regex for case-insensitive matching
         const result = await Workout.findOneAndUpdate(
             { title: new RegExp('^' + title + '$', 'i') }, 
-            req.body, // Assuming the updated data is in req.body
-            { new: true } // Return the updated document
+            req.body, 
+            { new: true } 
         );
 
         if (!result) {
             return res.status(404).json({ message: "Workout not found" });
         }
         
-        // If the workout was found and updated successfully, send back the updated workout
         res.json({ message: "Workout edited successfully", workout: result });
     } catch (error) {
-        // Catch any errors during the update process and send an error response
         res.status(500).json({ message: "Error updating workout", error: error.toString() });
     } 
 };
 
  const deleteWorkout = async (req, res) => {
-    // Decode URI component and trim whitespace
     const title = decodeURIComponent(req.params.title.trim());
     try {
-        // Use a regex for case-insensitive matching
         const result = await Workout.findOneAndDelete({ title: new RegExp('^' + title + '$', 'i') });
         if (!result) {
             return res.status(404).json({ message: "Workout not found" });
