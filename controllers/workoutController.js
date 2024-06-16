@@ -10,47 +10,52 @@ const getWorkout = async (req, res) => {
 };
 
 const createWorkout = async (req, res) => {
-    console.log(req.body)
-    const workout = new Workout(req.body);
+    const { title, description } = req.body;
+    const user = req.user; // Ensure this is populated correctly by verifyAuth
+
+    console.log('Request user:', user); // Log the user making the request
+    console.log('Request body:', req.body); // Log the request body
+
+    if (!title || !description) {
+        return res.status(400).json({ message: 'Title and description are required' });
+    }
+
     try {
+        const workout = new Workout({ title, description, user: user.userId });
         const savedWorkout = await workout.save();
         res.status(201).json(savedWorkout);
     } catch (error) {
-        res.status(400).json({ message: error.message });
+        res.status(500).json({ message: 'Error saving workout', error: error.toString() });
     }
 };
 
 const updateWorkout = async (req, res) => {
-    const title = decodeURIComponent(req.params.title.trim());
+    const { title } = req.params;
     try {
-        const result = await Workout.findOneAndUpdate(
-            { title: new RegExp('^' + title + '$', 'i') }, 
-            req.body, 
-            { new: true } 
-        );
-
-        if (!result) {
-            return res.status(404).json({ message: "Workout not found" });
+        const workout = await Workout.findOne({ title: new RegExp('^' + title + '$', 'i'), user: req.user.userId });
+        if (!workout) {
+            return res.status(403).json({ message: 'You are not authorized to update this workout' });
         }
-        
-        res.json({ message: "Workout edited successfully", workout: result });
-    } catch (error) {
-        res.status(500).json({ message: "Error updating workout", error: error.toString() });
-    } 
-};
 
- const deleteWorkout = async (req, res) => {
-    const title = decodeURIComponent(req.params.title.trim());
-    try {
-        const result = await Workout.findOneAndDelete({ title: new RegExp('^' + title + '$', 'i') });
-        if (!result) {
-            return res.status(404).json({ message: "Workout not found" });
-        }
-        res.json({ message: "Workout deleted successfully" });
+        Object.assign(workout, req.body);
+        await workout.save();
+        res.json({ message: 'Workout updated successfully', workout });
     } catch (error) {
-        res.status(500).json({ message: "Server error", error });
+        res.status(500).json({ message: 'Error updating workout', error: error.toString() });
     }
 };
 
+const deleteWorkout = async (req, res) => {
+    const { title } = req.params;
+    try {
+        const workout = await Workout.findOneAndDelete({ title: new RegExp('^' + title + '$', 'i'), user: req.user.userId });
+        if (!workout) {
+            return res.status(403).json({ message: 'You are not authorized to delete this workout' });
+        }
+        res.json({ message: 'Workout deleted successfully' });
+    } catch (error) {
+        res.status(500).json({ message: 'Server error', error });
+    }
+};
 
 export { getWorkout, createWorkout, updateWorkout, deleteWorkout };

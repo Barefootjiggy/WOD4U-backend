@@ -7,5 +7,4 @@ router.get('/profile', verifyAuth, (req, res) => {
     res.json({ message: "User profile data" });
 });
 
-
 export default router;
