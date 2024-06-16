@@ -11,11 +11,9 @@ const getWorkout = async (req, res) => {
 
 const createWorkout = async (req, res) => {
     const { title, description } = req.body;
-    const user = req.user; // Ensure this is populated correctly by verifyAuth
-
-    console.log('Request user:', user); // Log the user making the request
-    console.log('Request body:', req.body); // Log the request body
-
+    const user = req.user; 
+    console.log('Request user:', user); 
+    console.log('Request body:', req.body); 
     if (!title || !description) {
         return res.status(400).json({ message: 'Title and description are required' });
     }
