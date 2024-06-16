@@ -20,9 +20,11 @@ const addComment = async (req, res) => {
             workout: workoutId,
             user: req.user.userId
         });
+        console.log('Creating comment with:', { text, workout: workoutId, user: req.user.userId }); // Log the data used to create the comment
         const savedComment = await comment.save();
         res.status(201).json(savedComment);
     } catch (error) {
+        console.error('Error saving comment:', error); // Log the error
         res.status(400).json({ message: error.message });
     }
 };
